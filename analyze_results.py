@@ -54,6 +54,9 @@ if __name__ == '__main__':
 
     experiments = {
         'pred_xgb_t050_d06.npy': {'label': 'XGBoost (50 trees)'},
+        'pred_cat_t050_d06.npy': {'label': 'CatBoost (50 trees)'},
+        'pred_xgb_t500_d06.npy': {'label': 'XGBoost (500 trees)'},
+        'pred_cat_t500_d06.npy': {'label': 'CatBoost (500 trees)'},
 
         'tf_t050_d06_ex01000/pred_tf.npy': {'label': 'TensorFlow (1k ex/layer)'},
         'tf_t050_d06_ex05000/pred_tf.npy': {'label': 'TensorFlow (5k ex/layer)'},
@@ -75,7 +78,7 @@ if __name__ == '__main__':
 
     # Do the actual plotting
     sns.set()
-    f, ax = plt.subplots(figsize=(5, 3.5))
+    f, ax = plt.subplots(figsize=(10, 7))
 
     for fpr, tpr, label in plot_curves:
         ax.plot(fpr, tpr, label=label)
